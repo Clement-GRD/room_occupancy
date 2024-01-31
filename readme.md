@@ -7,5 +7,11 @@ Data are based on a [paper published in IEEE](https://ieeexplore.ieee.org/docume
 
 This project also serves as a test to start using Git and GitHub.
 
-2024/01/2014: Created\
-2024/01/2014: added modeling 
+2024/01/14: Created\
+2024/01/20: Added modeling 
+2024/01/31: Various fix
+2024/02/01: Added new cv and Future Work section
+
+
+
+
