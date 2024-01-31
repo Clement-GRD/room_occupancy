@@ -24,7 +24,7 @@ def plot_columns_index_occupancy (df, columns):
     """ 
     Plots the selected columns on separate graphs, sharing the same x (index), with Room_Occupancy as the hue.
     """
-    fig,axs = plt.subplots(len(columns),1,figsize = (15,10),sharex=True)
+    fig,axs = plt.subplots(len(columns),1,figsize = (15,7),sharex=True)
     fig.subplots_adjust(hspace=0)
     for i,col in enumerate(columns) :
         sns.scatterplot(data = df, x=df.index, y=col, ax=axs[i],hue = 'Room_Occupancy_Count', palette='coolwarm', edgecolor="none",legend=i==0)
