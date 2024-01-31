@@ -1,5 +1,9 @@
+import warnings
+warnings.filterwarnings("ignore")
+
 from sklearn.base import BaseEstimator, TransformerMixin
 import pandas as pd
+import numpy as np
 class Window_Average (BaseEstimator,TransformerMixin):
     """
     Returns the averaged dataframe averaged using a rolling windows running along axis = 0 with the specified window size.
@@ -13,7 +17,7 @@ class Window_Average (BaseEstimator,TransformerMixin):
 
     def transform(self, X, y=None):
         # transform only transforms the data
-        return X.rolling(self.window_size,min_periods=1).mean()
+        return X.rolling(self.window_size,min_periods=1,center=True).mean()
     
 class Window_Average_w_Edges (BaseEstimator,TransformerMixin):
     """
@@ -33,5 +37,5 @@ class Window_Average_w_Edges (BaseEstimator,TransformerMixin):
         new_df = X.copy()
         index_group = pd.Series(np.cumsum(X.index.diff(1).fillna(1)!=1),index=X.index) #create a series containing the same number for groups of data with consecutive index    
         for i in index_group.unique():
-            new_df[index_group==i] = (X[index_group==i]).rolling(self.window_size,min_periods=1).mean()
+            new_df[index_group==i] = (X[index_group==i]).rolling(self.window_size,min_periods=1,center=True).mean()
         return new_df
