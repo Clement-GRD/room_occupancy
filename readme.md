@@ -1,5 +1,5 @@
 
-# Room Occupancy Project PROJECT
+# Room Occupancy Project
 
 This is a simple project aiming at estimating the occupancy (count) of a room using data recorded by different sensors (temperature, CO2, sound, light and motion) as a function of time.
 
